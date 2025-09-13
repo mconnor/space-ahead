@@ -1,11 +1,11 @@
 ---
-import "../styles/global.css";
+import "#styles/global.css";
 
-import Footer from "../components/Footer.astro";
-import Nav from "../components/Nav.astro";
-import Subscribe from "../components/Subscribe.astro";
-import { withBase } from "../utils/helpers";
-import siteConfig from "../site.config";
+import Footer from "#components/Footer.astro";
+import Nav from "#components/Nav.astro";
+import Subscribe from "#components/Subscribe.astro";
+import { withBase } from "#utils/helpers.ts";
+import siteConfig from "#site.config.ts";
 
 type LayoutProps = {
   pageTitle: string;

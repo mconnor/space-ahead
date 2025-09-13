@@ -3,19 +3,37 @@ import { withBase } from "../utils/helpers";
 import { getCollection } from "astro:content";
 import siteConfig from "../site.config";
 
-export async function GET(context) {
-  const blog = await getCollection("blogs");
+interface BlogPostData {
+  title: string;
+  pubDate: string | Date;
+  description: string;
+}
+
+interface BlogPost {
+  id: string;
+  data: BlogPostData;
+}
+
+interface SiteConfig {
+  title: string;
+  description: string;
+}
+
+interface Context {
+  site: string;
+}
+
+export async function GET(context: Context): Promise<Response> {
+  const blog: BlogPost[] = await getCollection("blogs");
   return rss({
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: (siteConfig as SiteConfig).title,
+    description: (siteConfig as SiteConfig).description,
     site: context.site + withBase("/"),
     trailingSlash: false,
-    items: blog.map((post) => ({
+    items: blog.map((post: BlogPost) => ({
       title: post.data.title,
-      pubDate: post.data.pubDate,
+      pubDate: typeof post.data.pubDate === "string" ? new Date(post.data.pubDate) : post.data.pubDate,
       description: post.data.description,
-      // Compute RSS link from post `id`
-      // This example assumes all posts are rendered as `/blog/[id]` routes
       link: withBase(`/blog/${post.id}/`),
     })),
     customData: `<language>en-US</language>`,

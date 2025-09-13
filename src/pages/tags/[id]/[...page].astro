@@ -4,14 +4,14 @@ import {
   getAllTags,
   getPostsByTag,
   sortItemsByDateDesc,
-} from "../../../utils/helpers";
+} from "#utils/helpers.ts";
 import type { GetStaticPathsOptions, Page } from "astro";
-import siteConfig from "../../../site.config";
+import siteConfig from "#site.config.ts";
 import type { CollectionEntry } from "astro:content";
-import MainLayout from "../../../layouts/MainLayout.astro";
-import Pagination from "../../../components/Pagination.astro";
-import Subscribe from "../../../components/Subscribe.astro";
-import PostListPreview from "../../../components/PostListPreview.astro";
+import MainLayout from "#layouts/MainLayout.astro";
+import Pagination from "#components/Pagination.astro";
+// import Subscribe from "#components/Subscribe.astro";
+import PostListPreview from "#components/PostListPreview.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const posts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
