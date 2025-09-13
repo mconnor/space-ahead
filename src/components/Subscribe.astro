@@ -12,14 +12,14 @@ const { class: className } = Astro.props;
     <section
       id="subscribe"
       class:list={[
-        "p-8 flex flex-col items-center border border-dashed border-gray-500 rounded-2xl text-center",
+        "flex flex-col items-center rounded-2xl border border-dashed border-gray-500 p-8 text-center",
         className,
       ]}
     >
       {subscribe.title && (
         <h2
           class:list={[
-            "w-full max-w-xl leading-tight sigmar-ff font-medium",
+            "sigmar-ff w-full max-w-xl leading-tight font-medium",
             subscribe.text ? "mb-4" : "mb-8",
           ]}
         >
@@ -27,7 +27,7 @@ const { class: className } = Astro.props;
         </h2>
       )}
       {subscribe.text && (
-        <p class="w-full max-w-xl mb-8 text-sm leading-normal text-balance">
+        <p class="mb-8 w-full max-w-xl text-sm leading-normal text-balance">
           {subscribe.text}
         </p>
       )}
@@ -36,7 +36,7 @@ const { class: className } = Astro.props;
         method="post"
         id="subscribe-form"
         name="subscribe-form"
-        class="w-full max-w-xl flex flex-col gap-3.5 sm:flex-row"
+        class="flex w-full max-w-xl flex-col gap-3.5 sm:flex-row"
         target="_blank"
       >
         <label for="email" class="sr-only">
@@ -46,7 +46,7 @@ const { class: className } = Astro.props;
           type="email"
           name="email"
           id="email"
-          class="w-full h-9 px-5 py-2 text-sm bg-transparent outline-gray-500 rounded-full kanit-light placeholder:text-gray-500/50 dark:placeholder:text-gray-300/50 focus:outline-space-red dark:focus:outline-space-yellow outline-1"
+          class="kanit-light h-9 w-full rounded-full bg-transparent px-5 py-2 text-sm outline-1 outline-gray-500 placeholder:text-gray-500/50 focus:outline-space-red dark:placeholder:text-gray-300/50 dark:focus:outline-space-yellow"
           required=""
           value=""
           placeholder="Your email"
@@ -54,7 +54,7 @@ const { class: className } = Astro.props;
         <Button
           type="submit"
           name="subscribe"
-          class="space-btn-outlined w-full h-9 sm:w-auto"
+          class="space-btn-outlined h-9 w-full sm:w-auto"
         >
           Subscribe
         </Button>

@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import moon from "../assets/moon.svg";
-import sun from "../assets/sun.svg";
+import moon from "#assets/moon.svg";
+import sun from "#assets/sun.svg";
 import Button from "./Button.astro";
 ---
 
@@ -9,7 +9,7 @@ import Button from "./Button.astro";
   id="themeToggle"
   title="Click to switch Theme"
   class:list={[
-    "p-1! aspect-square border-gray-500 hover:border-space-red dark:hover:border-space-yellow hover:text-space-red dark:hover:text-space-yellow portrait:ml-auto",
+    "aspect-square border-gray-500 p-1! hover:border-space-red hover:text-space-red portrait:ml-auto dark:hover:border-space-yellow dark:hover:text-space-yellow",
   ]}
 >
   <Image src={moon} alt="Moon Icon" class="moon" />

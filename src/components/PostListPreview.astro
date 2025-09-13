@@ -1,8 +1,8 @@
 ---
 import { type CollectionEntry } from "astro:content";
-import ArrowRight from "../icons/ArrowRight.astro";
+import ArrowRight from "#icons/ArrowRight.astro";
 import FormattedDate from "./FormattedDate.astro";
-import { withBase } from "../utils/helpers";
+import { withBase } from "#utils/helpers.ts";
 
 type Props = {
   post: CollectionEntry<"blogs">;
@@ -16,7 +16,7 @@ const TitleTag = headingLevel;
 ---
 
 <a
-  class:list={["flex justify-between items-start gap-8 group", className]}
+  class:list={["group flex items-start justify-between gap-8", className]}
   href={withBase("/blog/" + post.id)}
 >
   <div class="grow">
@@ -25,8 +25,8 @@ const TitleTag = headingLevel;
     {description && <p>{description}</p>}
   </div>
   <div
-    class="hidden opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-4 sm:items-center sm:self-center sm:shrink-0"
+    class="hidden opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:shrink-0 sm:items-center sm:gap-4 sm:self-center"
   >
-    Read Post <ArrowRight class="fill-current w-4 h-4" />
+    Read Post <ArrowRight class="h-4 w-4 fill-current" />
   </div>
 </a>

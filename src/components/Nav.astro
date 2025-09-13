@@ -9,7 +9,7 @@ const { activePage } = Astro.props;
 ---
 
 <header>
-  <nav class="font-light w-full">
+  <nav class="w-full font-light">
     <a href={withBase("/")}><SiteIdentity /></a>
     <div class="hidden sm:flex sm:gap-8">
       {(<NavLinks activePage={activePage} links={siteConfig.headerNavLinks} />)}
@@ -19,7 +19,7 @@ const { activePage } = Astro.props;
   </nav>
   <div
     id="mobile-links"
-    class="font-light animated h-0 m-0 opacity-0 top-0 w-full"
+    class="animated top-0 m-0 h-0 w-full font-light opacity-0"
   >
     <span class="close-menu">❌</span>
     <NavLinks

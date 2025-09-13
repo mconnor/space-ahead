@@ -32,7 +32,7 @@ const { page } = Astro.props;
 const blog = page.data;
 const params = Astro.params;
 const allPosts = await getCollection("blogs", (post) =>
-  post.data.tags?.includes(params.id)
+  post.data.tags?.includes(params.id),
 );
 const allTags = getAllTags(allPosts);
 const currentTag = allTags.find((tag) => {
@@ -43,7 +43,7 @@ const currentTag = allTags.find((tag) => {
 <MainLayout pageTitle={siteConfig.title + "| " + currentTag?.name + " posts"}>
   <div class="page-content">
     <h2>Posts tagged with <span class="sigmar-ff">{currentTag?.name}</span></h2>
-    <div class="flex flex-col gap-8 max-w-full text-left mt-3">
+    <div class="mt-3 flex max-w-full flex-col gap-8 text-left">
       {blog.map((post) => <PostListPreview post={post} />)}
     </div>
     <Pagination page={page} class="mb-16 sm:mb-24" />

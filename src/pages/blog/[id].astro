@@ -40,24 +40,24 @@ const { Content } = await render(post);
 <MainLayout pageTitle={siteConfig.title + " | " + title}>
   <div class="page-content">
     <h1 class="sigmar-ff text-center text-balance">{title}</h1>
-    <p class="leading-8 text-center kanit-regular text-balance text-xs">
+    <p class="kanit-regular text-center text-xs leading-8 text-balance">
       by 🧑‍🚀 <span class="kanit-bold">{author}</span> on <span class="kanit-bold"
         >{new Date(pubDate).toDateString()}</span
       >
     </p>
     {
       image && image.url && (
-        <Image class="mb-8 my-6" src={image?.url} alt={image?.alt || ""} />
+        <Image class="my-6 mb-8" src={image?.url} alt={image?.alt || ""} />
       )
     }
-    <div class="font-light text-left">
+    <div class="text-left font-light">
       <Content />
     </div>
-    <p class="kanit-regular text-center text-balance text-xs">
+    <p class="kanit-regular text-center text-xs text-balance">
       Tagged: {
         tags.map((tag) => (
           <Button
-            class="px-4! m-2"
+            class="m-2 px-4!"
             href={withBase("/tags/" + createSlugFromTitle(tag))}
           >
             {tag}
@@ -66,10 +66,10 @@ const { Content } = await render(post);
       }
     </p>
     <div
-      class="flex flex-col sm:flex-row items-center justify-center gap-4 my-8"
+      class="my-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
     >
       <Button class="back-link" href={withBase("/blog")}>
-        <ArrowLeft class="w-5 h-5 fill-current mr-4" /> Back to All Stories
+        <ArrowLeft class="mr-4 h-5 w-5 fill-current" /> Back to All Stories
       </Button>
       {
         (prevPost || nextPost) && nextPost && (
@@ -78,7 +78,7 @@ const { Content } = await render(post);
             href={withBase("/blog/" + nextPost.id)}
           >
             Next Post: {nextPost.data.title}{" "}
-            <ArrowRight class="w-5 h-5 fill-current ml-4" />
+            <ArrowRight class="ml-4 h-5 w-5 fill-current" />
           </Button>
         )
       }

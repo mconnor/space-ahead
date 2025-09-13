@@ -6,10 +6,10 @@ const currentYear = new Date().getFullYear();
 
 <footer class="kanit-light text-xs sm:text-sm">
   <div
-    class="footer-primary flex flex-col items-center justify-center min-w-full border-t border-gray-500/50"
+    class="footer-primary flex min-w-full flex-col items-center justify-center border-t border-gray-500/50"
   >
     <div
-      class="flex flex-row items-center justify-around sm:justify-center gap-2 sm:gap-6 pt-6 pb-3 sm:px-6 text-center"
+      class="flex flex-row items-center justify-around gap-2 pt-6 pb-3 text-center sm:justify-center sm:gap-6 sm:px-6"
     >
       {
         siteConfig.footerNavLinks?.map((link) => (
@@ -29,13 +29,13 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
   <div
-    class="footer-secondary flex flex-col sm:flex-row items-center justify-between gap-6 min-w-full"
+    class="footer-secondary flex min-w-full flex-col items-center justify-between gap-6 sm:flex-row"
   >
-    <div class="flex flex-row gap-2 items-center justify-start text-balance">
+    <div class="flex flex-row items-center justify-start gap-2 text-balance">
       <span>&copy; {currentYear}</span>
       {siteConfig.title}. All rights reserved.
     </div>
-    <div class="flex flex-row gap-4 items-center justify-end-safe">
+    <div class="flex flex-row items-center justify-end-safe gap-4">
       {
         siteConfig.socialLinks?.map((link) => (
           <a href={link.href} title={link.text} target="_blank">
@@ -46,10 +46,10 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
   <div
-    class="footer-identity h-40 sm:h-18 text-center overflow-clip sticky bottom-0 items-end"
+    class="footer-identity sticky bottom-0 h-40 items-end overflow-clip text-center sm:h-18"
   >
     <span
-      class="sigmar-ff text-8xl sm:text-[6.5rem] leading-none text-whitesmoke/50 dark:text-gray-300/30"
+      class="sigmar-ff text-8xl leading-none text-whitesmoke/50 sm:text-[6.5rem] dark:text-gray-300/30"
       >{siteConfig.title}</span
     >
   </div>

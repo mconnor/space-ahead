@@ -30,7 +30,7 @@ const tags = getAllTags(posts).sort((tagA, tagB) => {
         tags.map((tag) => {
           const postCount = getPostsByTag(posts, tag.id).length;
           return (
-            <Button href={`${withBase("/tags/" + tag.id)}`} class="px-4! m-2">
+            <Button href={`${withBase("/tags/" + tag.id)}`} class="m-2 px-4!">
               {tag.name} ({postCount})
             </Button>
           );

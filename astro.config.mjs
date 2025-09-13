@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import swup from "@swup/astro";
-
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
@@ -10,11 +9,7 @@ export default defineConfig({
   site: "https://djsiddz.github.io",
   base: "/space-ahead",
   integrations: [
-    swup({
-      theme: ["overlay", { direction: "to-top" }],
-      cache: true,
-      progress: true,
-    }),
+    swup({  theme: ['slide', { direction: 'to-right' }], native: true }),
     preact(),
     sitemap(),
   ],

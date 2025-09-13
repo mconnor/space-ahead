@@ -13,29 +13,29 @@ import coverImage from "../assets/images/pixeltrue-space-discovery.svg";
       height={300}
       loading="eager"
       layout="fixed"
-      class="rounded-4xl mb-8 mx-auto grayscale-75 saturate-200"
+      class="mx-auto mb-8 rounded-4xl grayscale-75 saturate-200"
       src={coverImage}
       alt="Space envelop"
     />
     <div class="flex flex-col">
       <!-- <Image width={1024} height={600} loading="eager" layout="constrained" class="rounded-4xl mb-8 mx-auto" src={coverImage} alt="An Astronaut walking on a terrain"/> -->
-      <p class="font-light text-left text-balance">
+      <p class="text-left font-light text-balance">
         {siteConfig.contactInfo?.text}
       </p>
-      <p class="font-light text-left">
+      <p class="text-left font-light">
         {siteConfig.contactInfo?.email?.text}<br />
         <a
           href={siteConfig.contactInfo?.email?.href}
-          class="font-light text-left"
+          class="text-left font-light"
         >
           {siteConfig.contactInfo?.email?.email}
         </a>
       </p>
-      <p class="font-bold text-left flex flex-col sm:flex-row">
+      <p class="flex flex-col text-left font-bold sm:flex-row">
         Social Profiles:
         {
           siteConfig.contactInfo?.socialProfiles?.map((profile) => (
-            <a href={profile.href} class="font-light text-left ml-4">
+            <a href={profile.href} class="ml-4 text-left font-light">
               {profile.text}
             </a>
           ))

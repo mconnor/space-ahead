@@ -20,7 +20,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="antialiased break-words">
+<html lang="en" class="break-words antialiased">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href={withBase(`/space-ahead-logo.png`)} />
@@ -42,7 +42,7 @@ const {
     <title>{pageTitle}</title>
   </head>
   <body>
-    <main class="max-w-3xl mx-auto min-h-screen">
+    <main class="mx-auto min-h-screen max-w-3xl">
       <Nav activePage={activePage} />
       <slot />
       {showSubscribeForm && <Subscribe class="my-12 w-full" />}
